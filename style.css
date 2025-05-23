@@ -403,14 +403,13 @@ footer {
 }
 
 .cv-header-content {
-  font-style: italic;
   color: var(--secondary-color);
 }
 
 .cv-header-content a {
   color: var(--secondary-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .cv-header-content a:hover {
@@ -562,7 +561,6 @@ footer {
 }
 
 .contact-description {
-  font-style: italic;
   color: var(--secondary-color);
 }
 
@@ -687,7 +685,6 @@ footer {
 }
 
 .social-description {
-  font-style: italic;
   color: var(--secondary-color);
 }
 
