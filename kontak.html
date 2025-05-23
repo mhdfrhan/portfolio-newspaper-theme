@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400,500,600,700&f[]=bespoke-serif@300,400,500&f[]=aktura@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Selamat Datang | Muhammad Farhan</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="top">
+          <div>
+            <p>Selamat Datang</p>
+          </div>
+          <div>
+            <p id="waktu-sekarang"></p>
+          </div>
+        </div>
+
+        <div class="middle">
+          <img src="img/teks-header.svg" alt="" />
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li style="font-size: 40px; line-height: 0; color: #444444">•</li>
+            <li><a href="cv.html">Curilum Vitae</a></li>
+            <li style="font-size: 40px; line-height: 0; color: #444444">•</li>
+            <li><a class="active" href="kontak.html">Kontak</a></li>
+            <li style="font-size: 40px; line-height: 0; color: #444444">•</li>
+            <li><a href="sosmed.html">Sosial Media</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="contact-header">
+          <h1>Kontak Saya</h1>
+          <div class="contact-description">
+            <span
+              >Untuk informasi lebih lanjut, silakan hubungi saya melalui</span
+            >
+          </div>
+        </article>
+
+        <div class="contact-grid">
+          <section class="contact-info">
+            <div class="profile-card">
+              <img src="img/saya.jpg" alt="Muhammad Farhan" />
+              <div class="profile-details">
+                <h2>Muhammad Farhan</h2>
+                <p>Web Developer & UI Designer</p>
+              </div>
+            </div>
+
+            <div class="contact-details">
+              <h3>Informasi Kontak</h3>
+              <table class="info-table">
+                <tr>
+                  <th>Email</th>
+                  <td>
+                    <a href="mailto:hi.mhdfarhan@gmail.com"
+                      >hi.mhdfarhan@gmail.com</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th>WhatsApp</th>
+                  <td>
+                    <a href="https://wa.me/6285121170403">+62 851-2117-0403</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Linkedin</th>
+                  <td>
+                    <a
+                      href="https://www.linkedin.com/in/muhammad-farhan-79ba79294/"
+                      >Muhammad Farhan</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th>Alamat</th>
+                  <td>Pekanbaru, Riau<br />Indonesia</td>
+                </tr>
+              </table>
+            </div>
+          </section>
+
+          <section class="contact-form">
+            <h3>Kirim Pesan</h3>
+            <form id="whatsappForm" onsubmit="submitToWhatsApp(event)">
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subjek</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                Kirim Pesan via WhatsApp
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div class="container">
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Farhan Portfolio</h4>
+            <p>
+              Personal portfolio and professional showcase of Muhammad Farhan,
+              established 2025. All rights reserved.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="cv.html">Curilum Vitae</a></li>
+              <li><a href="kontak.html">Kontak</a></li>
+              <li><a href="sosmed.html">Sosial Media</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Details</h4>
+            <address>
+              Pekanbaru, Riau, Indonesia<br />
+              Email: hi.mhdfarhan@gmail.com<br />
+              WA: 0851-2117-0403
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-line"></div>
+          <p class="copyright">
+            © 2025 Muhammad Farhan • Web Developer & UI Designer
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function submitToWhatsApp(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        const text = `Nama: ${name}%0A
+    Email: ${email}%0A
+    Subjek: ${subject}%0A
+    Pesan: ${message}`;
+
+        window.open(`https://wa.me/6285121170403?text=${text}`, "_blank");
+      }
+    </script>
+  </body>
+</html>

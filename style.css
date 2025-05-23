@@ -1,0 +1,884 @@
+:root {
+  --primary-color: #111111;
+  --secondary-color: #444444;
+  --background-color: #fdfdf8;
+  --accent-color: #a97d3f;
+  --border-color: #cccccc;
+  --highlight-color: #f0e9db;
+  --link-color: #1a0dab;
+  --nav-bg-color: #ffffff;
+  --card-bg-color: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Bespoke Serif", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 16px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/noisy-background.jpg");
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+header {
+  padding: 2rem 0;
+}
+
+header .top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: "Gambetta", serif;
+  border-bottom: 5px solid var(--primary-color);
+  padding-bottom: 1rem;
+}
+
+header .top p {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+header .middle {
+  border-top: 2px solid var(--primary-color);
+  margin-top: 10px;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+nav {
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 1rem;
+  white-space: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+nav ul li {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Gambetta", serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+nav ul li a.active {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+main {
+  padding-top: 1rem;
+}
+
+.headline {
+  text-align: center;
+  border-bottom: 3px dotted var(--border-color);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.headline h1 {
+  font-family: "Gambetta", serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.headline h2 {
+  font-family: "Bespoke Serif", serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.lead-text {
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.first-letter::first-letter {
+  float: left;
+  font-size: 4rem;
+  padding: 0 0.5rem;
+  margin-right: 0.5rem;
+  font-family: "Gambetta", serif;
+  line-height: 1;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.featured-box,
+.sidebar-box {
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  background-color: var(--background-color);
+}
+
+.featured-box h3,
+.sidebar-box h3 {
+  font-family: "Gambetta", serif;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content {
+  margin-bottom: 1.5rem;
+}
+
+.article-content:last-child {
+  margin-bottom: 0;
+}
+
+.article-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  list-style: none;
+  font-family: "Bespoke Serif", serif;
+}
+
+.skills-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.quote-box {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  border-top: 2px dotted var(--border-color);
+  border-bottom: 2px dotted var(--border-color);
+}
+
+.quote-box blockquote {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.quote-box cite {
+  color: var(--secondary-color);
+}
+
+.contact-brief {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: var(--highlight-color);
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: "Gambetta", serif;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.read-more {
+  display: block;
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.subscription-box {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: var(--highlight-color);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.subscription-content h3 {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-content p {
+  font-family: "Bespoke Serif", serif;
+  margin-bottom: 1.5rem;
+}
+
+.subscribe-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  font-family: "Bespoke Serif", serif;
+}
+
+.subscribe-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  font-family: "Gambetta", serif;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 3rem 0 1rem;
+  border-top: 3px double var(--primary-color);
+  font-family: "Bespoke Serif", serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+  font-family: "Gambetta", serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer-col address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-line {
+  height: 1px;
+  background-color: var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-family: "Gambetta", serif;
+}
+
+.cv-header {
+  text-align: center;
+  border-bottom: 3px double var(--primary-color);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.cv-header h1 {
+  font-family: "Gambetta", serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.cv-header-content {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+.cv-header-content a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cv-header-content a:hover {
+  text-decoration: underline;
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.section-title {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-item,
+.edu-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.job-item h3,
+.edu-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.date {
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.awards-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.awards-table td {
+  padding: 0.8rem;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.awards-table td:first-child {
+  width: 80px;
+  font-weight: bold;
+}
+
+.skills-group {
+  margin-bottom: 1.5rem;
+}
+
+.skills-group h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.skills-group ul {
+  list-style: none;
+}
+
+.skills-group ul li {
+  padding: 0.3rem 0;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.certifications {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 3px dotted var(--border-color);
+}
+
+.cert-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Bespoke Serif", serif;
+  margin-top: 2rem;
+}
+
+.cert-table thead {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.cert-table th {
+  font-family: "Gambetta", serif;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cert-table td {
+  padding: 1rem;
+  border-bottom: 1px dotted var(--border-color);
+  vertical-align: top;
+}
+
+.cert-table strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Gambetta", serif;
+  color: var(--primary-color);
+}
+
+.cert-verify {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cert-verify a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-style: italic;
+}
+
+.cert-verify a:hover {
+  text-decoration: underline;
+}
+
+.cert-desc {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  border-bottom: 3px double var(--primary-color);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-family: "Gambetta", serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.profile-card {
+  background: var(--highlight-color);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-details h2 {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.info-table th {
+  text-align: left;
+  padding: 0.8rem;
+  border-bottom: 1px dotted var(--border-color);
+  font-family: "Gambetta", serif;
+  width: 100px;
+}
+
+.info-table td {
+  padding: 0.8rem;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.info-table a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.info-table a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.contact-form h3 {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: "Gambetta", serif;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  font-family: "Bespoke Serif", serif;
+  background: var(--background-color);
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: "Gambetta", serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--accent-color);
+}
+
+.social-header {
+  text-align: center;
+  border-bottom: 3px double var(--primary-color);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.social-header h1 {
+  font-family: "Gambetta", serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.social-description {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.social-card {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  width: 60px;
+  text-align: center;
+}
+
+.social-content h3 {
+  font-family: "Gambetta", serif;
+  font-size: 1.3rem;
+}
+
+.social-content p {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: "Gambetta", serif;
+  font-style: italic;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+.social-link i {
+  font-size: 0.8rem;
+}
+
+.social-quote {
+  text-align: center;
+  padding: 3rem;
+  border-top: 2px dotted var(--border-color);
+  border-bottom: 2px dotted var(--border-color);
+  margin: 3rem 0;
+}
+
+.social-quote blockquote {
+  font-family: "Gambetta", serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.social-quote cite {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .cert-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cert-table thead {
+    white-space: nowrap;
+  }
+
+  .cert-table td {
+    min-width: 200px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .headline h1 {
+    font-size: 2.5rem;
+  }
+
+  .quote-box {
+    padding: 2rem 1rem;
+  }
+
+  .quote-box blockquote {
+    font-size: 1.4rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 100%;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .social-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .social-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .social-icon {
+    margin-bottom: 1rem;
+  }
+
+  .social-quote blockquote {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .nav ul {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1536px) {
+}
